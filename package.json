@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "John Eriksson <root@ranbogmord.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
+    "mongoose": "4.6.3",
+    "servicebus": "2.0.5",
+    "tingodb": "0.4.2",
+    "zmq": "2.15.3"
+  }
+}

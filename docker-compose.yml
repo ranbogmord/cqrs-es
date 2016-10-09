@@ -1,0 +1,22 @@
+version: '2'
+services:
+  rabbitmq:
+    image: 'rabbitmq:latest'
+  db:
+      image: mongo:latest
+      volumes:
+        - ".data/db:/data/db"
+      ports:
+        - "27017:27017"
+  app:
+    build: .
+    depends_on:
+      - rabbitmq
+      - db
+    volumes:
+      - "./:/code"
+    ports:
+      - "8080:8080"
+    links:
+      - rabbitmq
+      - db
