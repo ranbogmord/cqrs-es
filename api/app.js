@@ -52,7 +52,15 @@ app.get('/site/:id', (req, res) => {
 });
 
 app.put('/site/:id', (req, res) => {
+    const data = req.body;
+    if (!data.name || !data.url) {
+        return res.status(400).end();
+    }
 
+    bus.send('site.update', data);
+    return res.json({
+        success: true
+    });
 });
 
 module.exports = app;
